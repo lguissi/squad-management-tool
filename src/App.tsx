@@ -5,7 +5,7 @@ function App() {
   globalStyles()
   return (
     <>
-    <Header />
+      <Header />
     </>
   );
 }

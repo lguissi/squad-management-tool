@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Link } from "@modulz/design-system"
+import { Box, Container, Flex, Link, Image } from "@modulz/design-system"
 import { FC } from "react"
 import { headerStyles } from "./headerStyles"
 
@@ -8,22 +8,16 @@ export const Header: FC = () => {
     <Box as="header">
       <Container size={4} css={{ padding:"0 30px" }}>
         <Flex align="center" justify="between" css={{ height: "60px" }}>
-          <Container css={{ margin: "unset" }}>
+          <Container css={{ margin: "unset", padding: 0 }}>
             <Link href="/" title="Home" variant="subtle">
-              <Container css={{ 
-                background: "url(/logo-new.svg) left top",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                color: "$whiteA1",
-                width: "40px",
-                height: "40px",
-                padding: 0,
-                margin: "auto"
-              }} />
+              <Container className="header-logo header-img" css={{padding: 0}} />
             </Link>
           </Container>
-          <Container css={{ margin: "unset" }}>
-            <h2>Leonardo Guissi</h2>
+          <Container css={{ margin: "unset", padding: 0 }}>
+            <Flex justify="between" align="center">
+              <h2>Leonardo Guissi</h2>
+              <Image className="header-img" src="user.svg" />
+            </Flex>
           </Container>
         </Flex>
       </Container>
