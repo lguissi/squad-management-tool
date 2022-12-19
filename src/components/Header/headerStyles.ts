@@ -18,12 +18,6 @@ export const headerStyles = globalCss({
     height: "40px",
     margin: "auto",
   },
-  "h2": {
-    display: "none",
-    '@bp2': {
-      display: "block"
-    }
-  },
   "img": {
     margin: 0,
     width: "40px",
