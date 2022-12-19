@@ -3,6 +3,7 @@ import { globalStyles } from './components/globals/style'
 import { Routes, Route } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { Box } from "@modulz/design-system"
+import { Footer } from "./components/Footer"
 
 function App() {
   globalStyles()
@@ -10,7 +11,7 @@ function App() {
     <>
       <Header />
       <Box css={{
-          minHeight: "100vh",
+          minHeight: "95vh",
           height: "100%",
           pt: "$9",
           backgroundColor: "#f7f3f7"
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
       </Box>
+      <Footer />
     </>
   )
 }

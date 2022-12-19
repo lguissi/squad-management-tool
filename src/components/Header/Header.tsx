@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Link, Image, Text } from "@modulz/design-system"
+import { Box, Container, Flex, Link, Text, Avatar } from "@modulz/design-system"
 import { FC } from "react"
 import { headerStyles } from "./headerStyles"
 
@@ -32,17 +32,12 @@ export const Header: FC = () => {
               >
                 Leonardo Guissi
               </Text>
-              <Text as="h3" css={{
-                fontWeight: 600,
-                color: '#484949',
-                padding: '10px',
-                backgroundColor: '#f3f5f7',
-                borderRadius: '50%',
+              <Avatar size={3} fallback='LG' css={{
                 marginLeft: 0,
-                '@bp2': { marginLeft: '10px' }
-              }}>
-                LR
-              </Text>
+                '@bp2': {
+                  marginLeft: '10px'
+                }
+              }} />
             </Flex>
           </Container>
         </Flex>
