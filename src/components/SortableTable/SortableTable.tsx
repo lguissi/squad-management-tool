@@ -1,5 +1,5 @@
 import { useState, useCallback, MouseEventHandler } from 'react'
-import { Table, Thead, Tbody, Tr, Td, Button } from "@modulz/design-system"
+import { Table, Thead, Tbody, Tr, Td, Button, Flex, Image } from "@modulz/design-system"
 
 type Header = {
   key: string
@@ -27,15 +27,23 @@ const sortData = ({tableData, sortKey, reverse}: {
   return reverse ? sortedData.reverse() : sortedData
 }
 
-const SortableButton = ({sortOrder, columnKey, sortKey, onClick} :{
-  sortOrder: SortOrder
-  columnKey: string
-  sortKey: string
-  onClick: MouseEventHandler<HTMLButtonElement>
-}) => {
+const SortableButton = () => {
   return (
     <>
-      <Button onClick={onClick}>{(sortKey === columnKey && sortOrder === 'asc') ? '▲' : '▼'}</Button>
+      <Button
+      css={{
+        boxShadow: 'none',
+        '&:hover, &:active, &:focus': {
+          boxShadow: 'none',
+          background: 'none'
+        },
+      }}>
+      <Image src='/sort.svg' css={{
+        width: '10px',
+        height: '10px',
+        filter: 'revert'
+      }} />
+      </Button>
     </>
   )
 }
@@ -59,22 +67,23 @@ export const SortableTable = (data: Array<Team>) => {
 
   return (
     <>
-      <Table css={{
-        backgroundColor: 'white',
-        borderRadius: '15px',
-        padding: '30px 10px'
-      }}>
+      <Table css={{px: '10px'}}>
         <Thead>
           <Tr>
             {headers.map((row: Header) => {
               return (
-                <Td key={row.key}>
-                  {row.label}
-                  <SortableButton
-                  columnKey={row.key}
-                  onClick={() => changeSort(row.key)}
-                  {...{sortOrder, sortKey}}
-                  />
+                <Td key={row.key} css={{
+                  width: row.key === 'name' ? '30%' : '70%',
+                  '&:active, &:focus': {
+                    background: '$gray8'
+                  }
+                }}
+                onClick={() => changeSort(row.key)}
+                >
+                  <Flex justify='between' align='center'>
+                    {row.label}
+                    <SortableButton />
+                  </Flex>
                 </Td>
               )
             })}

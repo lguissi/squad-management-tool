@@ -10,6 +10,7 @@ export const Home: FC = () => {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
+      pb: '30px'
     }}>
       <Container size='4' css={{width: '100%'}}>
         <Grid

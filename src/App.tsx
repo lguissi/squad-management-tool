@@ -1,5 +1,5 @@
 import { Header } from "./components/Header"
-import { globalStyles } from './components/globals/style'
+import { globalStyles } from './globals/style'
 import { Routes, Route } from "react-router-dom"
 import { Home } from "./pages/Home"
 import { Box } from "@modulz/design-system"
