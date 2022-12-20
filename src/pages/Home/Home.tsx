@@ -11,7 +11,7 @@ export const Home: FC = () => {
       flexDirection: "column",
       justifyContent: "center",
       pb: '30px',
-      maxWidth: '1920px',
+      maxWidth: '1300px',
       margin: '0 auto'
     }}>
       <Container size='4' css={{width: '100%'}}>

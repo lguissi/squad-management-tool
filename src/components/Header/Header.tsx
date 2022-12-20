@@ -9,15 +9,23 @@ export const Header: FC = () => {
       <Container size={4} css={{
         padding:"0 15px",
         '@bp2': {
-          padding:"0 30px"
+          padding:"0 25px"
         }
       }}>
         <Flex align="center" justify="between" css={{ height: "50px" }}>
           <Container css={{ margin: "unset", padding: 0 }}>
+            <Flex align='center'>
             <Link href="/" title="Home" variant="subtle">
               <Container className="header-logo" css={{padding: 0}} />
             </Link>
+            <Text as='h2' css={{
+              marginLeft: '15px',
+              color: 'white',
+              fontWeight: 600
+            }}>Squad Management Tool</Text>
+            </Flex>
           </Container>
+
           <Container css={{ margin: "unset", padding: 0 }}>
             <Flex justify="between" align="center">
               <Text 
