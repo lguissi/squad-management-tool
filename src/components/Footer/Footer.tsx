@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@modulz/design-system'
+import { Box, Text } from '@modulz/design-system'
 import { FC } from 'react'
 
 export const Footer: FC = () => {

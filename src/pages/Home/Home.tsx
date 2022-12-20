@@ -1,4 +1,4 @@
-import { Container, Flex, Grid, Section } from "@modulz/design-system"
+import { Container, Grid, Section } from "@modulz/design-system"
 import { FC } from "react"
 import { TeamList } from "../../components/TeamList"
 

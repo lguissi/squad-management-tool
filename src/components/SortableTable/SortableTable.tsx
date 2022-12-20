@@ -1,4 +1,4 @@
-import { useState, useCallback, MouseEventHandler } from 'react'
+import { useState, useCallback } from 'react'
 import { Table, Thead, Tbody, Tr, Td, Button, Flex, Image } from "@modulz/design-system"
 
 type Header = {
