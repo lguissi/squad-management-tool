@@ -35,7 +35,7 @@ const SortableButton = () => {
         boxShadow: 'none',
         '&:hover, &:active, &:focus': {
           boxShadow: 'none',
-          background: 'none'
+          backgroundColor: 'transparent'
         },
       }}>
       <Image src='/sort.svg' css={{
@@ -73,9 +73,10 @@ export const SortableTable = (data: Array<Team>) => {
             {headers.map((row: Header) => {
               return (
                 <Td key={row.key} css={{
+                  px: '10px',
                   width: row.key === 'name' ? '35%' : '65%',
                   '&:active, &:focus': {
-                    background: '$gray8'
+                    background: '$gray5'
                   }
                 }}
                 onClick={() => changeSort(row.key)}
@@ -93,9 +94,23 @@ export const SortableTable = (data: Array<Team>) => {
         <Tbody>
           {sortedData().map((team: Team) => {
             return (
-              <Tr key={team.id}>
-                <Td>{team.name}</Td>
-                <Td>{team.description}</Td>
+              <Tr key={team.id} css={{
+                borderRadius: '15px',
+                '&:hover': {
+                  backgroundColor: '#f7eef7',
+                  color: '#bf6296'
+                }
+              }}>
+                <Td css={{
+                  px: '10px',
+                  borderTopLeftRadius: '5px',
+                  borderBottomLeftRadius: '5px',
+                }}>{team.name}</Td>
+                <Td css={{
+                  px: '10px',
+                  borderTopRightRadius: '5px',
+                  borderBottomRightRadius: '5px',
+                }}>{team.description}</Td>
               </Tr>
             )
           })}

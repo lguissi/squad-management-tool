@@ -16,7 +16,7 @@ export const TeamList: FC = () => {
       <Text as='h2' size='7' css={{
         color: '#552c8a',
         fontWeight: 600,
-        padding: '0 10px 30px',
+        padding: '0 20px 30px',
         borderBottom: '1px solid $gray5',
         mb: '10px'
       }}>My Teams</Text>
