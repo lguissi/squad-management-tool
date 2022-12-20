@@ -1,6 +1,7 @@
-import { Container, Grid, Section } from "@modulz/design-system"
+import { Container, Grid, Section, Box } from "@modulz/design-system"
 import { FC } from "react"
 import { TeamList } from "../../components/TeamList"
+import { TopFive } from "../../components/TopFive"
 
 export const Home: FC = () => {
   return (
@@ -22,8 +23,12 @@ export const Home: FC = () => {
             "@bp2": { gridTemplateColumns: "repeat(2, 1fr)" }
           }}
         >
-          <TeamList />
-          <TeamList />
+          <Box className='left'>
+            <TeamList />
+          </Box>
+          <Box className='right'>
+            <TopFive />
+          </Box>
         </Grid>
       </Container>
     </Section>

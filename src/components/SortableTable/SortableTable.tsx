@@ -65,6 +65,13 @@ export const SortableTable = (data: Array<Team>) => {
     setSortKey(key)
   }
 
+  const columnStyles = {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    px: '10px',
+  }
+
   return (
     <>
       <Table css={{px: '10px'}}>
@@ -72,20 +79,22 @@ export const SortableTable = (data: Array<Team>) => {
           <Tr>
             {headers.map((row: Header) => {
               return (
-                <Td key={row.key} css={{
-                  px: '10px',
-                  width: row.key === 'name' ? '35%' : '65%',
-                  '&:active, &:focus': {
-                    background: '$gray5'
-                  }
-                }}
-                onClick={() => changeSort(row.key)}
-                >
-                  <Flex justify='between' align='center'>
-                    {row.label}
-                    <SortableButton />
-                  </Flex>
-                </Td>
+                <>
+                  <Td key={row.key} css={{
+                    px: '10px',
+                    width: row.key === 'name' ? '35%' : '65%',
+                    '&:active, &:focus': {
+                      background: '$gray5'
+                    }
+                  }}
+                  onClick={() => changeSort(row.key)}
+                  >
+                    <Flex justify='between' align='center' css={{color: 'black', fontWeight: 600}}>
+                      {row.label}
+                      <SortableButton />
+                    </Flex>
+                  </Td>
+                </>
               )
             })}
           </Tr>
@@ -102,12 +111,12 @@ export const SortableTable = (data: Array<Team>) => {
                 }
               }}>
                 <Td css={{
-                  px: '10px',
+                  ...columnStyles,
                   borderTopLeftRadius: '5px',
                   borderBottomLeftRadius: '5px',
                 }}>{team.name}</Td>
                 <Td css={{
-                  px: '10px',
+                  ...columnStyles,
                   borderTopRightRadius: '5px',
                   borderBottomRightRadius: '5px',
                 }}>{team.description}</Td>

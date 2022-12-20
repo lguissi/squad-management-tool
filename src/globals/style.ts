@@ -9,9 +9,25 @@ export const globalStyles = globalCss({
 
   "h1, h2, h3, h4, h5": { fontWeight: 400, color: "white" },
 
-  "table": {color: '$black', fontWeight: 600},
+  "table td": {color: '$black', fontWeight: 600},
 
   "td:active button": {
     backgroundColor: '$gray5'
-  }
+  },
+
+  ".box-white": {
+    backgroundColor: 'white',
+    borderRadius: '15px',
+    padding: '30px 0'
+  },
+
+  "h2.title-box": {
+    color: '#552c8a',
+    fontWeight: 700,
+    padding: '0 20px 30px',
+    borderBottom: '1px solid $gray5',
+    mb: '10px'
+  },
+
+  "h4.average-title": {color: '$black', fontWeight: 600, fontSize: '$3', mb: '10px'}
 })
