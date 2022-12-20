@@ -73,7 +73,7 @@ export const SortableTable = (data: Array<Team>) => {
             {headers.map((row: Header) => {
               return (
                 <Td key={row.key} css={{
-                  width: row.key === 'name' ? '30%' : '70%',
+                  width: row.key === 'name' ? '35%' : '65%',
                   '&:active, &:focus': {
                     background: '$gray8'
                   }
