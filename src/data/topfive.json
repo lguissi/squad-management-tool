@@ -1,0 +1,16 @@
+{
+  "highest": [
+    {"id": 7, "name": "Inter Milan", "average": 31.9},
+    {"id": 8, "name": "APOEL Nicosla", "average": 31.7},
+    {"id": 9, "name": "AC Milan", "average": 31.6},
+    {"id": 10, "name": "Besiktas JK", "average": 31.4},
+    {"id": 11, "name": "Olympiacos Piraeus", "average": 31.3}
+  ],
+  "lowest": [
+    {"id": 12, "name": "Zalgiris Vilnius", "average": 21.1},
+    {"id": 13, "name": "Arsenal FC", "average": 21.6},
+    {"id": 14, "name": "Ajax Amsterdam", "average": 22.0},
+    {"id": 15, "name": "FC Nantes", "average": 22.1},
+    {"id": 16, "name": "CSKA Moscow", "average": 22.5}
+  ]
+}
