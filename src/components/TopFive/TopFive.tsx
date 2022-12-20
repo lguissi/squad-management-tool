@@ -11,15 +11,17 @@ type TeamAgeAverage = {
 const teamAge = (teams: Array<TeamAgeAverage>) => {
   return (
     <Box css={{
+      marginBottom: '20px',
       background: '#e9e3e8',
       padding: '5px',
-      borderRadius: '10px'
+      borderRadius: '5px',
+      '@bp1': {marginBottom: 0}
     }}>
       {teams.map((team: TeamAgeAverage) => {
         return (
           <Box key={team.id} css={{
+            p: '10px 20px',
             background: 'white',
-            p: '15px 20px',
             marginBottom: '5px',
             borderRadius: '5px',
             '&:hover': {
@@ -30,8 +32,13 @@ const teamAge = (teams: Array<TeamAgeAverage>) => {
             }
             }}>
               <Flex justify='between' align='center'>
-                <Text>{team.name}</Text>
-                <Text css={{fontWeight: 600}}>{team.average}</Text>
+                <Text css={{
+                  textOverflow: 'ellipsis',
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                  maxWidth: '75%'
+                }}>{team.name}</Text>
+                <Text css={{fontWeight: 600}}>{team.average.toFixed(1)}</Text>
               </Flex>
           </Box>
         )
@@ -44,7 +51,7 @@ export const TopFive: FC = () => {
   const {highest, lowest} = data
   return (
     <>
-      <Box className="box-white">
+      <Box className="rounded-box box-white">
         <Text as='h2' size='7' className="title-box">Top 5</Text>
         <Grid
           css={{

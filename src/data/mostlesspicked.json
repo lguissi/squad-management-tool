@@ -1,0 +1,10 @@
+{
+  "most": {
+    "id": 1,
+    "pickRate": 75.00
+  },
+  "less": {
+    "id": 2,
+    "pickRate": 25.00
+  }
+}

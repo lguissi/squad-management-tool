@@ -69,7 +69,7 @@ export const SortableTable = (data: Array<Team>) => {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    px: '10px',
+    p: '20px 10px'
   }
 
   return (

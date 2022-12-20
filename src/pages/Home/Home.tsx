@@ -1,7 +1,13 @@
-import { Container, Grid, Section, Box } from "@modulz/design-system"
+import {
+  Container,
+  Grid,
+  Section,
+  Box
+} from "@modulz/design-system"
 import { FC } from "react"
 import { TeamList } from "../../components/TeamList"
 import { TopFive } from "../../components/TopFive"
+import { MostLessPicked } from "../../components/MostLessPicked"
 
 export const Home: FC = () => {
   return (
@@ -28,6 +34,7 @@ export const Home: FC = () => {
           </Box>
           <Box className='right'>
             <TopFive />
+            <MostLessPicked />
           </Box>
         </Grid>
       </Container>

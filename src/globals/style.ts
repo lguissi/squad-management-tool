@@ -15,10 +15,15 @@ export const globalStyles = globalCss({
     backgroundColor: '$gray5'
   },
 
-  ".box-white": {
-    backgroundColor: 'white',
+  ".rounded-box": {
     borderRadius: '15px',
-    padding: '30px 0'
+    padding: '30px 0',
+    '&.box-white': {
+      backgroundColor: 'white'
+    },
+    '&.box-fade': {
+      backgroundImage: "linear-gradient(to bottom, #c00e4f, #8b206f)"
+    }
   },
 
   "h2.title-box": {
@@ -29,5 +34,20 @@ export const globalStyles = globalCss({
     mb: '10px'
   },
 
-  "h4.average-title": {color: '$black', fontWeight: 600, fontSize: '$3', mb: '10px'}
+  "h4.average-title": {color: '$black', fontWeight: 600, fontSize: '$3', mb: '10px'},
+
+  ".left, .right": {display: 'grid'},
+
+  ".left": {
+    marginBottom: '20px',
+    '@bp2': {
+      marginBottom: 0
+    }
+  },
+
+  ".right > div": {
+    marginBottom: '20px',
+
+    '&:last-child': {marginBottom: 0}
+  }
 })
