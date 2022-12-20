@@ -24,6 +24,7 @@ const teamAge = (teams: Array<TeamAgeAverage>) => {
             background: 'white',
             marginBottom: '5px',
             borderRadius: '5px',
+            border: '1px solid transparent',
             '&:hover': {
               border: '1px solid #c50643',
             },
