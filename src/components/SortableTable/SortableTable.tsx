@@ -79,22 +79,20 @@ export const SortableTable = (data: Array<Team>) => {
           <Tr>
             {headers.map((row: Header) => {
               return (
-                <>
-                  <Td key={row.key} css={{
-                    px: '10px',
-                    width: row.key === 'name' ? '35%' : '65%',
-                    '&:active, &:focus': {
-                      background: '$gray5'
-                    }
-                  }}
-                  onClick={() => changeSort(row.key)}
-                  >
-                    <Flex justify='between' align='center' css={{color: 'black', fontWeight: 600}}>
-                      {row.label}
-                      <SortableButton />
-                    </Flex>
-                  </Td>
-                </>
+                <Td key={row.key} css={{
+                  px: '10px',
+                  width: row.key === 'name' ? '35%' : '65%',
+                  '&:active, &:focus': {
+                    background: '$gray5'
+                  }
+                }}
+                onClick={() => changeSort(row.key)}
+                >
+                  <Flex justify='between' align='center' css={{color: 'black', fontWeight: 600}}>
+                    {row.label}
+                    <SortableButton />
+                  </Flex>
+                </Td>
               )
             })}
           </Tr>

@@ -20,10 +20,11 @@ export const globalStyles = globalCss({
     padding: '30px 0',
     '&.box-white': {
       backgroundColor: 'white'
-    },
-    '&.box-fade': {
-      backgroundImage: "linear-gradient(to bottom, #c00e4f, #8b206f)"
     }
+  },
+
+  '.box-fade': {
+    backgroundImage: "linear-gradient(to bottom, #c00e4f, #8b206f)"
   },
 
   "h2.title-box": {

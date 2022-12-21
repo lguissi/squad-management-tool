@@ -18,6 +18,7 @@ function App() {
       }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/team" element={<p>oi</p>} />
         </Routes>
       </Box>
       <Footer />
