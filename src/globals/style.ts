@@ -50,5 +50,18 @@ export const globalStyles = globalCss({
     marginBottom: '20px',
 
     '&:last-child': {marginBottom: 0}
+  },
+
+  ".icon": {
+    width: '15px',
+    height: '15px',
+    '&:hover': {
+      cursor: 'pointer',
+      transform: 'scale(1.2)'
+    },
+
+    '&.icon-delete': {
+      marginRight: '10px'
+    }
   }
 })

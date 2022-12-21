@@ -19,6 +19,7 @@ function App() {
       }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/team/:teamId" element={<AddEditTeam />} />
           <Route path="/team/add" element={<AddEditTeam />} />
         </Routes>
       </Box>

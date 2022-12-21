@@ -3,6 +3,8 @@ import { FC } from 'react'
 import data from '../../data/mostlesspicked.json'
 
 const boxStyles = {
+  position: 'relative',
+  zIndex: 1,
   padding: '20px',
   '@bp0': {marginBottom: 0}
 }
@@ -37,7 +39,8 @@ export const MostLessPicked: FC = () => {
 
   return (
     <Box className='rounded-box box-fade' css={{
-      padding: 0
+      padding: 0,
+      position: 'relative'
     }}>
       <Grid
           css={{
@@ -72,6 +75,20 @@ export const MostLessPicked: FC = () => {
               </Box>
               <Text as='h3' css={pickRateStyles}>{less.pickRate}%</Text>
             </Flex>
+          </Box>
+
+          {/* Circle for aesthetics. */}
+          <Box css={{
+            position: 'absolute',
+            width: '75px',
+            height: '75px',
+            borderRadius: '50%',
+            border: '2px solid rgb(170, 88, 146)',
+            left: '50%',
+            top: '50%',
+            zIndex: 0,
+            transform: 'translate(-50%, -50%)'
+          }}>
           </Box>
         </Grid>
     </Box>

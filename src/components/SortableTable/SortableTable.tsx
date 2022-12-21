@@ -1,5 +1,17 @@
-import { useState, useCallback } from 'react'
-import { Table, Thead, Tbody, Tr, Td, Button, Flex, Image } from "@modulz/design-system"
+import { FC, useState, useCallback } from 'react'
+import {
+  Button,
+  Flex,
+  Image,
+  Link,
+  Table,
+  Tbody,
+  Td,
+  Text,
+  Thead,
+  Tr
+} from "@modulz/design-system"
+import { Pencil1Icon, TrashIcon } from '@radix-ui/react-icons'
 
 type Header = {
   key: string
@@ -45,6 +57,24 @@ const SortableButton = () => {
       }} />
       </Button>
     </>
+  )
+}
+
+const DeleteEditButtons = ({ teamId }: {teamId: number}) => {
+  return (
+    <Flex
+      className='del-edit-button'
+      justify='between'
+      align='center'
+      css={{display: 'none'}}
+    >
+      <Link as='a' title='Delete' css={{color: 'inherit'}}>
+        <TrashIcon className='icon icon-delete'/>
+      </Link>
+      <Link href={`#/team/${teamId}`} as='a' title='Edit' css={{color: 'inherit'}}>
+        <Pencil1Icon className='icon icon-edit'/>
+      </Link>
+    </Flex>
   )
 }
 
@@ -105,7 +135,12 @@ export const SortableTable = (data: Array<Team>) => {
                 borderRadius: '15px',
                 '&:hover': {
                   backgroundColor: '#f7eef7',
-                  color: '#bf6296'
+                  color: '#bf6296',
+                  '.del-edit-button': {
+                    '@bp1': {
+                      display: 'flex'
+                    }
+                  }
                 }
               }}>
                 <Td css={{
@@ -117,7 +152,12 @@ export const SortableTable = (data: Array<Team>) => {
                   ...columnStyles,
                   borderTopRightRadius: '5px',
                   borderBottomRightRadius: '5px',
-                }}>{team.description}</Td>
+                }}>
+                  <Flex justify='between' align='center'>
+                    {team.description}
+                    <DeleteEditButtons teamId={team.id} />
+                  </Flex>
+                </Td>
               </Tr>
             )
           })}
