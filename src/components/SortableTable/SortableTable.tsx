@@ -1,4 +1,4 @@
-import { FC, useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import {
   Button,
   Flex,
@@ -7,7 +7,6 @@ import {
   Table,
   Tbody,
   Td,
-  Text,
   Thead,
   Tr
 } from "@modulz/design-system"
