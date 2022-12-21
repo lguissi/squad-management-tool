@@ -13,7 +13,7 @@ export const TeamList: FC = (props) => {
     <Box className="rounded-box box-white" css={{position: 'relative'}}>
       <Text as='h2' size='7' className="title-box">My teams</Text>
       {SortableTable(data)}
-      <Link href="/team/add" title="Add Team" variant="subtle">
+      <Link href="/#/team/add" title="Add Team" variant="subtle">
         <Box className='box-fade' css={{
           position: 'absolute',
           top: 30,

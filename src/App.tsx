@@ -1,9 +1,10 @@
-import { Header } from "./components/Header"
-import { globalStyles } from './globals/style'
 import { Routes, Route } from "react-router-dom"
-import { Home } from "./pages/Home"
 import { Box } from "@modulz/design-system"
+import { globalStyles } from './globals/style'
+import { Header } from "./components/Header"
 import { Footer } from "./components/Footer"
+import { Home } from "./pages/Home"
+import { AddEditTeam } from './pages/AddEditTeam'
 
 function App() {
   globalStyles()
@@ -18,7 +19,7 @@ function App() {
       }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/team" element={<p>oi</p>} />
+          <Route path="/team/add" element={<AddEditTeam />} />
         </Routes>
       </Box>
       <Footer />
