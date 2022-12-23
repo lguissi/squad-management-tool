@@ -70,7 +70,7 @@ const DeleteEditButtons = ({ teamId }: {teamId: number}) => {
       <Link as='a' title='Delete' css={{color: 'inherit'}}>
         <TrashIcon className='icon icon-delete'/>
       </Link>
-      <Link href={`#/team/${teamId}`} as='a' title='Edit' css={{color: 'inherit'}}>
+      <Link href={`/team/${teamId}`} as='a' title='Edit' css={{color: 'inherit'}}>
         <Pencil1Icon className='icon icon-edit'/>
       </Link>
     </Flex>

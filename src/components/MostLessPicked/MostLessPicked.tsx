@@ -1,6 +1,13 @@
 import { Box, Flex, Grid, Image, Text } from '@modulz/design-system'
+import { CSS } from '@modulz/design-system/dist/stitches.config'
 import { FC } from 'react'
 import data from '../../data/mostlesspicked.json'
+
+interface PlayerInterface {
+  label: string
+  css: CSS,
+  pickRate: number
+}
 
 const boxStyles = {
   position: 'relative',
@@ -33,6 +40,20 @@ const pickRateStyles = {
   pb: '5px'
 }
 
+const Player = ({ label, css, pickRate } : PlayerInterface) => {
+  return (
+    <Box css={css}>
+      <Text as='h2' css={titleStyles}>{label}</Text>
+      <Flex justify='center' align='start'>
+        <Box css={imageBoxStyles}>
+          <Image src='user-profile-icon.svg' css={imageStyles}/>
+        </Box>
+        <Text as='h3' css={pickRateStyles}>{pickRate}%</Text>
+      </Flex>
+    </Box>
+  )
+}
+
 export const MostLessPicked: FC = () => {
 
   const {most, less} = data
@@ -49,7 +70,10 @@ export const MostLessPicked: FC = () => {
             "@bp1": { gridTemplateColumns: "repeat(2, 1fr)" }
           }}
         >
-          <Box css={{
+          <Player 
+            label='Most picked player'
+            pickRate={most.pickRate}
+            css={{
             ...boxStyles,
             borderRight: 0,
             borderBottom: '2px solid #aa5892',
@@ -57,25 +81,13 @@ export const MostLessPicked: FC = () => {
               borderRight: '2px solid #aa5892',
               borderBottom: 0
             }
-          }}>
-            <Text as='h2' css={titleStyles}>Most picked player</Text>
-            <Flex justify='center' align='start'>
-              <Box css={imageBoxStyles}>
-                <Image src='user-profile-icon.svg' css={imageStyles}/>
-              </Box>
-              <Text as='h3' css={pickRateStyles}>{most.pickRate}%</Text>
-            </Flex>
-          </Box>
+          }}/>
 
-          <Box css={boxStyles}>
-            <Text as='h2' css={titleStyles}>Less picked player</Text>
-            <Flex justify='center' align='start'>
-              <Box css={imageBoxStyles}>
-                <Image src='user-profile-icon.svg' css={imageStyles}/>
-              </Box>
-              <Text as='h3' css={pickRateStyles}>{less.pickRate}%</Text>
-            </Flex>
-          </Box>
+          <Player 
+            label='Less picked player'
+            pickRate={less.pickRate}
+            css={boxStyles}
+          />
 
           {/* Circle for aesthetics. */}
           <Box css={{
